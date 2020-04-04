@@ -31,13 +31,6 @@ extension Date {
 struct ContentView: View {
     @State private var history = SymbolHistory()
 
-    private let formatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.calendar = Calendar(identifier: .gregorian)
-        formatter.dateFormat = "yyyy-MM-dd"
-        formatter.locale = Locale.current
-        return formatter
-    }()
 
     var body: some View {
         VStack {
@@ -52,13 +45,7 @@ struct ContentView: View {
 
 
     func loadData() {
-        let queryItems = [
-            URLQueryItem(name: "base", value: "USD"),
-            URLQueryItem(name: "symbols", value: "BRL"),
-            URLQueryItem(name: "start_at", value: formatter.string(from: Date().date(byAddingDays: -7))),
-            URLQueryItem(name: "end_at", value: formatter.string(from: Date()))
-        ]
-        let endpoint = SymbolEndpoint(.get, path: "/history", queryItems: queryItems)
+        let endpoint: SymbolEndpoint = .get7DaysHistory(base:"USD", to: "BRL")
         NetworkClient.shared.request(endpoint, for: SymbolHistory.self) { (result) in
             switch result {
             case let .success(data):

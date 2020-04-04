@@ -20,6 +20,7 @@
 		556C282E2438163600524EB4 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556C282D2438163600524EB4 /* NetworkError.swift */; };
 		556C28322438192000524EB4 /* URLSessionProtocol+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556C28312438192000524EB4 /* URLSessionProtocol+Mock.swift */; };
 		556C28352438226A00524EB4 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556C28342438226A00524EB4 /* Model.swift */; };
+		556C283A243849DA00524EB4 /* DefaultFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556C2839243849DA00524EB4 /* DefaultFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		556C282D2438163600524EB4 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		556C28312438192000524EB4 /* URLSessionProtocol+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSessionProtocol+Mock.swift"; sourceTree = "<group>"; };
 		556C28342438226A00524EB4 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		556C2839243849DA00524EB4 /* DefaultFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 		556C282624380F1000524EB4 /* NetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
+				556C2838243849C700524EB4 /* Extension */,
 				556C28332438225D00524EB4 /* Model Example */,
 				556C282724380F2700524EB4 /* Endpoint.swift */,
 				556C2829243815EE00524EB4 /* URLSessionProtocol.swift */,
@@ -139,6 +142,14 @@
 				556C28342438226A00524EB4 /* Model.swift */,
 			);
 			path = "Model Example";
+			sourceTree = "<group>";
+		};
+		556C2838243849C700524EB4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				556C2839243849DA00524EB4 /* DefaultFormatter.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				556C283A243849DA00524EB4 /* DefaultFormatter.swift in Sources */,
 				556C282A243815EE00524EB4 /* URLSessionProtocol.swift in Sources */,
 				556C282E2438163600524EB4 /* NetworkError.swift in Sources */,
 				556C280524380F0500524EB4 /* AppDelegate.swift in Sources */,

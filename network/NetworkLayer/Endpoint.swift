@@ -75,4 +75,14 @@ struct SymbolEndpoint: Endpoint {
         components.queryItems = queryItems
         return components.url
     }
+
+    static func get7DaysHistory(base: String, to symbols: String) -> SymbolEndpoint {
+
+        return SymbolEndpoint(.get, path: "/history", queryItems: [
+            URLQueryItem(name: "base", value: base),
+            URLQueryItem(name: "symbols", value: symbols),
+            URLQueryItem(name: "start_at", value: DateFormatter.string(from: Date().date(byAddingDays: -7))),
+            URLQueryItem(name: "end_at", value: DateFormatter.string(from: Date()))
+        ])
+    }
 }
