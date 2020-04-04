@@ -10,7 +10,7 @@ import Foundation
 
 typealias CurrencyPair = [String: Double]
 
-struct Symbol: Decodable {
+struct Symbol: Codable, Equatable {
     var rates: CurrencyPair
     var base: String
     var date: String
@@ -22,7 +22,7 @@ struct Symbol: Decodable {
     }
 }
 
-struct SymbolHistory: Decodable {
+struct SymbolHistory: Codable, Equatable {
     var rates: [String: CurrencyPair] = [:]
     var base: String = ""
     var startDate: String = ""
